@@ -21,7 +21,7 @@
                                 <img class="avatar square huge" src="{{ $user->getAvatar(120) }}" alt="{{ $user->name }}">
                             </div>
                             <div>
-                                <h4 class="mt-md">{{ $user->name }}</h4>
+                                <h4 class="mt-md">{{ $user->name }} ({{ $user->vatsim_id }})</h4>
                                 <p class="text-muted">
                                     {{ trans('entities.profile_user_for_x', ['time' => $user->created_at->diffForHumans(null, true)]) }}
                                 </p>

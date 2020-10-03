@@ -14,8 +14,9 @@ class CreateUsersTable extends Migration
     {
         Schema::create('users', function (Blueprint $table) {
             $table->increments('id');
+            $table->integer('vatsim_id')->unique();
             $table->string('name');
-            $table->string('email')->unique();
+            $table->string('email');
             $table->string('password', 60);
             $table->rememberToken();
             $table->nullableTimestamps();
@@ -23,6 +24,7 @@ class CreateUsersTable extends Migration
 
         // Create the initial admin user
         DB::table('users')->insert([
+            'vatsim_id' => 1,
             'name' => 'Admin',
             'email' => 'admin@admin.com',
             'password' => bcrypt('password'),

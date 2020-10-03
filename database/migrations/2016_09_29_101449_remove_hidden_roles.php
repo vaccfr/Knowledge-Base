@@ -25,6 +25,7 @@ class RemoveHiddenRoles extends Migration
 
         // Insert our new public system user.
         $publicUserId = DB::table('users')->insertGetId([
+            'vatsim_id' => 2,
             'email' => 'guest@example.com',
             'name' => 'Guest',
             'system_name' => 'public',

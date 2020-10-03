@@ -54,7 +54,7 @@
                         <span class="user-name py-s hide-under-l" refs="dropdown@toggle"
                               aria-haspopup="true" aria-expanded="false" aria-label="{{ trans('common.profile_menu') }}" tabindex="0">
                             <img class="avatar" src="{{$currentUser->getAvatar(30)}}" alt="{{ $currentUser->name }}">
-                            <span class="name">{{ $currentUser->getShortName(9) }}</span> @icon('caret-down')
+                            <span class="name">{{ $currentUser->getShortName(9) }} ({{ $currentUser->vatsim_id }})</span> @icon('caret-down')
                         </span>
                         <ul refs="dropdown@menu" class="dropdown-menu" role="menu">
                             <li>

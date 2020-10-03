@@ -14,7 +14,7 @@ Route::group(['middleware' => 'auth'], function () {
     // Shelves
     Route::get('/create-shelf', 'BookshelfController@create');
     Route::group(['prefix' => 'shelves'], function() {
-        Route::get('/', 'BookshelfController@index');
+        Route::get('/', 'BookshelfController@index')->name('main');
         Route::post('/', 'BookshelfController@store');
         Route::get('/{slug}/edit', 'BookshelfController@edit');
         Route::get('/{slug}/delete', 'BookshelfController@showDelete');
@@ -211,6 +211,9 @@ Route::group(['middleware' => 'auth'], function () {
     Route::get('/login/service/{socialDriver}/detach', 'Auth\SocialController@detachSocialAccount');
 });
 Route::get('/register/service/{socialDriver}', 'Auth\SocialController@socialRegister');
+
+Route::get('/log-in', 'Auth\VatsimSSOController@login');
+Route::get('/authenticatesso', 'Auth\VatsimSSOController@authenticate');
 
 // Login/Logout routes
 Route::get('/login', 'Auth\LoginController@getLogin');
