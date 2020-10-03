@@ -45,7 +45,7 @@
                             @if(userCan('users-manage') || $currentUser->id == $user->id)
                                 <a href="{{ url("/settings/users/{$user->id}") }}">
                                     @endif
-                                    {{ $user->name }} <br> <span class="text-muted">{{ $user->email }}</span>
+                                    {{ $user->name }} ({{ $user->vatsim_id }}) <br> <span class="text-muted">{{ $user->email }}</span>
                                     @if(userCan('users-manage') || $currentUser->id == $user->id)
                                 </a>
                             @endif
