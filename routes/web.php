@@ -212,37 +212,38 @@ Route::group(['middleware' => 'auth'], function () {
 });
 Route::get('/register/service/{socialDriver}', 'Auth\SocialController@socialRegister');
 
-Route::get('/log-in', 'Auth\VatsimSSOController@login');
+// Vatsim SSO implementation
+Route::get('/login', 'Auth\VatsimSSOController@login');
 Route::get('/authenticatesso', 'Auth\VatsimSSOController@authenticate');
 
 // Login/Logout routes
-Route::get('/login', 'Auth\LoginController@getLogin');
-Route::post('/login', 'Auth\LoginController@login');
+// Route::get('/login', 'Auth\LoginController@getLogin');
+// Route::post('/login', 'Auth\LoginController@login');
 Route::get('/logout', 'Auth\LoginController@logout');
-Route::get('/register', 'Auth\RegisterController@getRegister');
-Route::get('/register/confirm', 'Auth\ConfirmEmailController@show');
-Route::get('/register/confirm/awaiting', 'Auth\ConfirmEmailController@showAwaiting');
-Route::post('/register/confirm/resend', 'Auth\ConfirmEmailController@resend');
-Route::get('/register/confirm/{token}', 'Auth\ConfirmEmailController@confirm');
-Route::post('/register', 'Auth\RegisterController@postRegister');
+// Route::get('/register', 'Auth\RegisterController@getRegister');
+// Route::get('/register/confirm', 'Auth\ConfirmEmailController@show');
+// Route::get('/register/confirm/awaiting', 'Auth\ConfirmEmailController@showAwaiting');
+// Route::post('/register/confirm/resend', 'Auth\ConfirmEmailController@resend');
+// Route::get('/register/confirm/{token}', 'Auth\ConfirmEmailController@confirm');
+// Route::post('/register', 'Auth\RegisterController@postRegister');
 
 // SAML routes
-Route::post('/saml2/login', 'Auth\Saml2Controller@login');
-Route::get('/saml2/logout', 'Auth\Saml2Controller@logout');
-Route::get('/saml2/metadata', 'Auth\Saml2Controller@metadata');
-Route::get('/saml2/sls', 'Auth\Saml2Controller@sls');
-Route::post('/saml2/acs', 'Auth\Saml2Controller@acs');
+// Route::post('/saml2/login', 'Auth\Saml2Controller@login');
+// Route::get('/saml2/logout', 'Auth\Saml2Controller@logout');
+// Route::get('/saml2/metadata', 'Auth\Saml2Controller@metadata');
+// Route::get('/saml2/sls', 'Auth\Saml2Controller@sls');
+// Route::post('/saml2/acs', 'Auth\Saml2Controller@acs');
 
 // User invitation routes
-Route::get('/register/invite/{token}', 'Auth\UserInviteController@showSetPassword');
-Route::post('/register/invite/{token}', 'Auth\UserInviteController@setPassword');
+// Route::get('/register/invite/{token}', 'Auth\UserInviteController@showSetPassword');
+// Route::post('/register/invite/{token}', 'Auth\UserInviteController@setPassword');
 
 // Password reset link request routes...
-Route::get('/password/email', 'Auth\ForgotPasswordController@showLinkRequestForm');
-Route::post('/password/email', 'Auth\ForgotPasswordController@sendResetLinkEmail');
+// Route::get('/password/email', 'Auth\ForgotPasswordController@showLinkRequestForm');
+// Route::post('/password/email', 'Auth\ForgotPasswordController@sendResetLinkEmail');
 
 // Password reset routes...
-Route::get('/password/reset/{token}', 'Auth\ResetPasswordController@showResetForm');
-Route::post('/password/reset', 'Auth\ResetPasswordController@reset');
+// Route::get('/password/reset/{token}', 'Auth\ResetPasswordController@showResetForm');
+// Route::post('/password/reset', 'Auth\ResetPasswordController@reset');
 
 Route::fallback('HomeController@getNotFound');
