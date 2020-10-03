@@ -1,5 +1,5 @@
 https://library.vatsim.fr {
-    root * /var/www/vaccfr/public
+    root * /var/www/bookstack/public
 
     php_fastcgi unix//run/php/php7.4-fpm.sock
 
@@ -8,5 +8,5 @@ https://library.vatsim.fr {
 }
 
 https://kb.vatsim.fr {
-    redir https://vatsim.fr
+    redir https://library.vatsim.fr
 }
