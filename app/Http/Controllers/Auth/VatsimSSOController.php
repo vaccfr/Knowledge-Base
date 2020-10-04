@@ -84,6 +84,10 @@ class VatsimSSOController extends Controller
                 'password' => 'none',
             ]);
             $existingUser = User::where('vatsim_id', $response->data->cid)->first();
+            DB::table('role_user')->insert([
+                'user_id' => $existingUser->id,
+                'role_id' => 4,
+            ]);
         } else {
             $existingUser->vatsim_id = $response->data->cid;
             $existingUser->name = $fname.' '.$lname;
