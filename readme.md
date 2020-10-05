@@ -1,7 +1,7 @@
 <p align="center"><img src="https://vatsim.fr/media/img/FrenchvACC_BBG_2.png" width="auto"></p>
 
 <p align="center"><b>v.1.0</b><br>Official repository of the French vACC Library website<br>
-<a href="https://library.vatsim.fr/" target="_blank">https://library.vatsim.fr/</a> <i>(Version française)</i><br>
+<a href="https://library.vatsim.fr/" target="_blank">https://library.vatsim.fr/</a><br>
 </p>
 
 ---
